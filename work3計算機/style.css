@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+
+.calculator {
+    width: 40%;
+    border: 2px solid rgb(10,10,10);
+    margin-top: 100px;
+}
+
+.result {
+    text-align: end;
+    font-size: 2rem;
+    padding: 2px;
+    margin: 10px 10px;
+    border:2px solid rgb(10,10,10);
+}
+
+.btn-layout {
+    display: flex;
+    border-top: 2px solid rgb(10,10,10);
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.btn {
+    width: 20%;
+    height: 50px;
+    font-size: 2rem;
+    margin: 2px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+

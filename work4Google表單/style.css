@@ -1,0 +1,82 @@
+body {
+    background-color: #edc283;
+    margin:0px;
+}
+
+header h1 {
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: url(https://images.unsplash.com/photo-1538249101370-1aa8a3cd3133?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=06456d9b1a2b531351030edc6b24cd13&auto=format&fit=crop&w=1949&q=80);
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-form {
+    margin-top: -100px;
+    margin-bottom: 100px;
+    min-width: 600px;
+    border: 1px solid black;
+    padding: 20px;
+    background: #fffefe;
+}
+
+.main-form div {
+    margin-bottom: 30px;
+}
+
+input[type="text"], input[type="email"] {
+    width: 60%;
+    border: 0;
+    border-bottom: 1px solid rgba(203, 203, 203, 0.81);
+    transition: 0.3s;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0)
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+input[type="email"]:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.btn{
+    width:100px;
+    height:40px;
+    font-size:1.4rem;
+    margin:10px;
+    background: #413ee9;
+    color:white;
+    border-radius: 5px;
+}
+
+.temp {
+    background: #e46464;
+}
+
+.temp::after {
+    content:"這是必填問題"
+}
+
+.temp-email {
+    background: #e46464;
+}
+
+.temp-email::after {
+    content:"請輸入有效的電子郵件地址"
+}
+
+.form div {
+    transition: 1s;
+}

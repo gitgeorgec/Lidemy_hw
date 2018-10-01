@@ -1,0 +1,76 @@
+body {
+    padding:0;
+    margin:0;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+.navbar{
+    position: fixed;
+    top:0;
+    background: rgb(57, 56, 56);
+    color: white;
+    width:100%;
+    padding:5px;
+}
+
+.brand {
+    font-size:1.5rem;
+    padding:0 1.2rem;
+}
+
+.navbar * {
+    display: inline;
+}
+
+.nav-link a{
+    padding:10px;
+    color: #9d9d9d;
+}
+
+
+.jumbotron {
+    background: #b5b5b5;
+    padding: 2rem 0;
+    width:100%
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+button {
+    width:10rem;
+    height: 3rem;
+    background: #3351fa;
+    color:white;
+    font-size:1.2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.card {
+    display: inline-block;
+    width: 30%;  
+    min-width: 250px;
+    margin:15px;
+
+}
+
+footer {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .card {
+        width:80%;
+        margin: 10px auto;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Google表單</title>
+</head>
+<body>
+    <div class="jumbotron"></div>
+    <div class="container">
+        <div class="main-form">
+            <header>
+                <h1>偽 GOOGLE 表單</h1>
+                <p>表單建立練習</p>
+                <p>*必填</p>
+            </header>
+            <form class="form">
+                <div>
+                    <h3>電子郵件地址<span>*</span></h3>
+                    <input type="email" class="need" id="mailInput" required>
+                    <div></div>
+                </div>
+                <div>
+                    <h3>暱稱<span>*</span></h3>
+                    <input type="text" class="need" id="nameInput" required>
+                    <div></div>
+                </div>
+                <div >
+                    <h3>報名類型<span>*</span></h3>
+                        <input type="radio" name="rgType" value="A-type" id="one" class="typeInput need" required><label for="A-type">A-type</label>
+                        <input type="radio" name="rgType" value="B-type" id="two" class="typeInput need" required><label for="B-type">B-type</label> 
+                    <div></div>
+                </div>
+                <div>
+                    <h3>簡短說明<span>*</span></h3>
+                    <input type="text" class="messageInput need" required>
+                    <div></div>
+                </div>
+                <div>
+                    <h3>其他</h3>
+                    <input class="otherInput" type="text">
+                </div>
+                <button type="submit"class="btn">submit</button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <p>Google 並未認可或建立這項內容。 檢舉濫用情形 - 服務條款 - 其他條款</p>
+    </div>
+
+    
+</body>
+<script src="app.js"></script>
+</html>
