@@ -1,0 +1,113 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 20px auto;
+}
+
+header h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+textarea {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+
+.message {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 5px;
+    margin: 4px;
+    transition: 1s;
+}
+
+.message_response {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 10px;
+    background: #7af2e6;
+    border-radius: 5px;
+    margin: 4px;
+}
+
+.user-info,
+.user-info input{
+    margin: 4px 0;
+    font-size: 1.2rem;
+}
+
+.submitbtn {
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    background: #0c71dd;
+    color: rgb(254, 254, 254);
+    border-radius: 5px;
+    align-self: flex-end;
+    margin-top: 4px;
+}
+
+.subcomment {
+    padding:5px;
+    background: white;
+}
+
+.close{
+    display: none;
+}
+
+.responbtn {
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    background: #0c71dd;
+    color: rgb(254, 254, 254);
+    border-radius: 5px;
+    margin-top: 4px;
+}
+
+.deletebtn {
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    background: #e62020;
+    color: rgb(254, 254, 254);
+    border-radius: 5px;
+    margin-top: 4px;
+    float: right;
+}
+
+.editbtn {
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    background: #dd9b0c;
+    color: rgb(254, 254, 254);
+    border-radius: 5px;
+    margin-top: 4px;
+    float: right;
+}
+
+.user_message{
+    position: relative;
+}
+
+.edit{
+    position: absolute;
+    top:0;
+    left:0;
+    flex-direction: row;
+    width: 100%;
+    z-index: 10;
+}
+
+.onwer_response{
+    background: #e97ba5
+}
