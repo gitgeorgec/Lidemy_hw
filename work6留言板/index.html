@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <button><a href="http://localhost:8080/myapp/logout.php">logout</a></button>
+    <main>
+        <header>
+            <h1>Message board</h1>
+        </header>
+        <form action="" class="message main_input" method="POST" autocomplete="off">
+            <div class="user-info">
+                <p class="user">loginUser["username"]</p>
+                <input type='text' name=username value="loginUserusername" required style='display:none'>
+            </div>
+            <textarea name="message" id="" cols="60" rows="10" required></textarea>
+            <button type="submit" class="submitbtn">Leave message</button>
+        </form>
+        <div class="page_list">
+            <button>last page</button>
+            <select name="page" id="page">
+            </select>
+            <button>next page</button>
+        </div>
+        <div class="message_list"></div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

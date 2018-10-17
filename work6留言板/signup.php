@@ -17,10 +17,10 @@
 </header>
 
 <form action="/myapp/signup.php" method="post">
-    <input type="text" name="username" placeholder="username">
-    <input type="text" name="nickname" placeholder="nickname">
-    <input type="password" name="password" placeholder="password">
-    <button>Sign UP</button>
+    <input type="text" name="username" placeholder="username" required>
+    <input type="text" name="nickname" placeholder="nickname" required>
+    <input type="password" name="password" placeholder="password" required>
+    <button type="submit">Sign UP</button>
 </form>
 
 <?php
@@ -48,7 +48,7 @@ if(isset($_POST["username"])){
     $sessionhash = password_hash($id, PASSWORD_DEFAULT);
     $_SESSION[$sessionhash]=$id;
     setcookie("certificate_id", $sessionhash, time()+3600);
-    header("Location:http://localhost:8080/myapp/index.php");
+    header("Location:http://localhost:8080/myapp/index.html");
 } 
 ?>
 

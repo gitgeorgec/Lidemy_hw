@@ -95,19 +95,45 @@ textarea {
     float: right;
 }
 
+.sendbtn {
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    background: #0ebd54;
+    color: rgb(254, 254, 254);
+    border-radius: 5px;
+    margin-top: 4px;
+    float: right;
+}
+
 .user_message{
     position: relative;
 }
 
 .edit{
-    position: absolute;
-    top:0;
-    left:0;
-    flex-direction: row;
     width: 100%;
     z-index: 10;
 }
 
 .onwer_response{
     background: #e97ba5
+}
+
+.page_list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.page_list li {
+    font-size: 1.5rem;
+    margin: 2px;
+    width: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.page_list li:hover{
+    color: #0c71dd
 }

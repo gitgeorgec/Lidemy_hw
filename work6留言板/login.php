@@ -42,7 +42,7 @@
                 //store login stage in session
                 $_SESSION[$sessionhash]=$row['id'];
                 setcookie("certificate_id", $sessionhash, time()+3600);
-                header("Location:http://localhost:8080/myapp/index.php");
+                header("Location:http://localhost:8080/myapp/index.html");
             }
             return;
         } else{

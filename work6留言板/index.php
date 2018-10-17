@@ -21,7 +21,7 @@
         $stmt = $conn->prepare("INSERT INTO `messages` (`username`, `message`) VALUES(?,?)");
         $stmt->bind_param("ss", $username, $message);
         $stmt->execute();
-        header("Location:http://localhost:8080/myapp/index.php");
+        // header("Location:http://localhost:8080/myapp/index.php");
     }
     
     if(isset($_POST["id"])){
@@ -47,14 +47,25 @@
         $stmt = $conn->prepare("UPDATE `messages` SET `message` = ? WHERE `messages`.`id` = ?");
         $stmt->bind_param("ss", $message, $updateId);
         $stmt->execute();
+        header("Location:http://localhost:8080/myapp/index.php");
+    }
+
+    if(isset($_GET["data"])){
+        $seletMessages = "SELECT * FROM `messages` Where SubType = 0 order by id DESC LIMIT $pagestart,$pageend";
+        $MessageList = $conn->query($seletMessages);
+        $row = $MessageList->fetch_assoc();
+        echo "<div>".$MessageList ."</div>";
+        return "hello";
     }
 ?>
 
 <?
     $notLogin = true;
-    if(isset($_SESSION[$_COOKIE["certificate_id"]])){
-            $id_info = $_SESSION[$_COOKIE["certificate_id"]];
-            $notLogin = false;
+    if(isset($_COOKIE["certificate_id"])){
+        if(isset($_SESSION[$_COOKIE["certificate_id"]])){
+                $id_info = $_SESSION[$_COOKIE["certificate_id"]];
+                $notLogin = false;
+        }
     }
 
     if($notLogin) {
@@ -77,10 +88,10 @@
         <h1>Message board</h1>
     </header>
     <main>
-    <form action="/myapp/index.php" class="message" method="POST" autocomplete="off">
+    <form action="/myapp/index.php" class="message main_input" method="POST" autocomplete="off">
         <div class="user-info">
 <?
-    echo "<p>" . $loginUser["username"] . "</p>";
+    echo "<p class='user'>" . $loginUser["username"] . "</p>";
     echo "<input type='text' name=username value=" . $loginUser["username"]  . " required style='display:none'>";
 ?>
         </div>
@@ -129,7 +140,7 @@
                         . "<br> <button class='editbtn'>edit</button>"
                         ."</div>";
                     echo "<div class='user_message close'>" .
-                        "<form action='index.php' method='GET' edit'>
+                        "<form action='index.php' method='GET'>
                             <input type='text' name='id' value=$id hidden>
                             <textarea name='update' style='width:100%; height:100%;'>". $row["message"] . "</textarea>
                             <br> <button type='submit' class='editbtn'>edit</button>
@@ -168,8 +179,8 @@
                                     . "<br> <button class='editbtn'>edit</button>"
                                     ."</div>";;
                                 echo "<div class='user_message close'>" .
-                                    "<form action='index.php' method='GET' edit'>
-                                        <input type='text' name='id' value=$id hidden>
+                                    "<form action='index.php' method='GET'>
+                                        <input type='text' name='id' value=$subMessageId hidden>
                                         <textarea name='update' style='width:100%; height:100%;'>". $subrow["message"] . "</textarea>
                                         <br> <button type='submit' class='editbtn'>edit</button>
                                     </form>
@@ -195,7 +206,7 @@
                 //response 
                     echo "
                     <button class='responbtn'>response</button>
-                    <form action='/myapp/index.php' class='message input close' method='POST'>"
+                    <form action='/myapp/index.php' class='message sub_input close' method='POST'>"
                     . $loginUser["username"] . " response
                         <input type='text' name='id' value=$id style='display:none'>
                         <div class='user-info'>
@@ -215,32 +226,6 @@
 
 </div>            
  
- <script>
-const responbtns = document.querySelectorAll(".responbtn")
-const subMessages = document.querySelectorAll(".message")
-const editBtns = document.querySelectorAll(".user_message>.editbtn")
-const editForms = document.querySelectorAll(".edit")
-
-function handleEdit(){
-    const editForms = this.parentElement.parentElement.querySelectorAll(".user_message")
-    editForms.forEach(form=>form.classList.toggle("close"))
-}
-
-function handleresponse(e){
-    const message = this.parentElement.querySelector(".input")
-    message.classList.toggle("close")
-}
-
-function preventBubble(e){
-    e.stopPropagation()
-}
-
-editBtns.forEach(editBtn=>editBtn.addEventListener("click", handleEdit))
-
-responbtns.forEach(responbtn=>responbtn.addEventListener("click", handleresponse))
-subMessages.forEach(message=>message.addEventListener("click", preventBubble))
-editForms.forEach(form=>form.addEventListener("click", preventBubble))
-
- </script>
+<script src="app.js"></script>
 </main>
 </html>
